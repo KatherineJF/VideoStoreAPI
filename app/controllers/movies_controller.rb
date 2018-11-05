@@ -1,5 +1,4 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, except: :index
 
   def index
       movies = Movie.all
@@ -16,7 +15,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movie.new(movie_params)
+    movie = Movie.new(title: params[:title], release_date: params[:release_date], overview: params[:overview], inventory: params[:inventory])
     if movie.save
       render json: movie.as_json(except: [:created_at, :updated_at]), status: :ok
     else
@@ -32,6 +31,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :release_date, :overview, :inventory, :id)
+    params.require(:movie).permit(:title, :release_date, :overview, :inventory)
   end
 end
