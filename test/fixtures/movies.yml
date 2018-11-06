@@ -11,3 +11,9 @@ movie2:
   release_date: 2015
   overview: Hot and sad stuff
   inventory: 2
+
+movie3:
+  title: Star Wars
+  release_date: 1977
+  overview: space space space
+  inventory: 3
