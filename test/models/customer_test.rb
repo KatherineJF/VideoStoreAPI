@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe Customer do
-  let(:customer) { Customer.new }
+  #let(:customer) { Customer.new }
 
   # it "must be valid" do
   #   value(customer).must_be :valid?
@@ -18,10 +18,11 @@ describe Customer do
   describe 'Relationships' do
 
     it 'customer can have many movies' do
-      customer = customers(:customer1)
-      movies = customer.movies
+      #customer = customers(:customer1)
+      movies = customers(:customer1).movies
+      binding.pry
+      expect(movies.count).must_be :>=, 1
 
-      expect(movies.length).must_be :>=, 1
       movies.each do |movie|
         expect(movie).must_be_instance_of Movie
       end

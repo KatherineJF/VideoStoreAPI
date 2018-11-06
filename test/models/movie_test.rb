@@ -11,7 +11,11 @@ describe Movie do
   # end
 
   it "can have many customers" do
-    
+
+
+  end
+
+
 
   end
 end
