@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   post '/movies', to: "movies#create"
 
+  post '/rentals/check-out', to: "rentals#create", as: "rentals"
+  post '/rentals/:id/check-in', to: "rentals#update", as: "rental"
+
 end
