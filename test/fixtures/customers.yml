@@ -5,6 +5,9 @@ customer1:
   registered_at: 2018-11-05 12:46:48
   postal_code: 92385
   phone: 330-501-1945
+  address: 2421 E Fred St
+  city: Seattle
+  state: WA
 
 
 customer2:
@@ -12,3 +15,6 @@ customer2:
   registered_at: 2018-11-05 12:46:48
   postal_code: 57812
   phone: 419-935-2525
+  address: 6421 E Egg St
+  city: Seattle
+  state: IL
