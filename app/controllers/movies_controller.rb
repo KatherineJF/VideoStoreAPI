@@ -1,5 +1,4 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, except: :index
 
   def index
       movies = Movie.all
@@ -32,6 +31,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :release_date, :overview, :inventory)
+    params.permit(:title, :release_date, :overview, :inventory)
   end
+
 end
