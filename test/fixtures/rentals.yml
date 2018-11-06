@@ -15,14 +15,14 @@ two:
   returned: false
 
 three:
-  customer_id: customer2
+  customer: customer2
   movie_id: movie1
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
   returned: false
 
 four:
-  customer_id: customer2
+  customer: customer2
   movie_id: movie2
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
