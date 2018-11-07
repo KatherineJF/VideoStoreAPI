@@ -6,9 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 JSON.parse(File.read('db/seeds/customers.json')).each do |customer|
+  customer["movies_checked_out_count"] = 0
   Customer.create!(customer)
 end
 
 JSON.parse(File.read('db/seeds/movies.json')).each do |movie|
+  movie["available_inventory"] = movie["inventory"]
   Movie.create!(movie)
 end

@@ -1,3 +1,4 @@
+require "pry"
 class RentalsController < ApplicationController
 
   def create
@@ -13,6 +14,7 @@ class RentalsController < ApplicationController
 
       if rental.save
         rental.movie.decrement_inventory
+        rental.customer.increment_checked_out_count
         render json: { id: rental.id, checkout: rental.checkout, due_date: rental.due_date }, status: :ok
       else
         render json: {
@@ -35,6 +37,8 @@ class RentalsController < ApplicationController
 
       if rental.save
         rental.movie.increment_inventory
+        binding.pry
+        rental.customer.decrement_checked_out_count
         render json: { id: rental.id, returned: rental.returned }, status: :ok
       else
         render json: {
