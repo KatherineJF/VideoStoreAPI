@@ -31,7 +31,7 @@ describe CustomersController do
 
 
     it "returns customers with exactly the required fields" do
-      fields = %w(name registered_at postal_code phone address city state id)
+      fields = %w(name registered_at postal_code phone address city state id movies_checked_out_count)
       get customers_path
       body = JSON.parse(response.body)
       body.each do |customer|

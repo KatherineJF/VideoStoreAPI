@@ -4,9 +4,4 @@ class CustomersController < ApplicationController
     render json: customers.as_json(except: [:created_at, :updated_at]), status: :ok
   end
 
-  def create
-  end
-
-  def show
-  end
 end
