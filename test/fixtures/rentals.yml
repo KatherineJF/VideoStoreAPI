@@ -5,25 +5,25 @@ one:
   movie: movie1
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
-  returned: false
+  returned: nil
 
 two:
   customer: customer1
   movie: movie2
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
-  returned: false
+  returned: nil
 
 three:
   customer: customer2
   movie_id: movie1
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
-  returned: false
+  returned: nil
 
 four:
   customer: customer2
   movie_id: movie2
   checkout: 2018-11-05 12:49:43
   due_date: 2018-11-05 12:49:43
-  returned: false
+  returned: nil
