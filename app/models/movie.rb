@@ -4,7 +4,7 @@ class Movie < ApplicationRecord
   validates :title, presence: true
 
   def can_checkout?
-    self.inventory >= 1
+    self.inventory > 0 #break test cases 
   end
 
   def increment_inventory
