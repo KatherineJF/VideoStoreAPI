@@ -5,6 +5,7 @@ movie1:
   release_date: 1973
   overview: Lots of stuff blows up and war is bad
   inventory: 2
+  available_inventory: 2
 
 movie2:
   title: Blue is the Warmest Color
@@ -17,3 +18,10 @@ movie3:
   release_date: 1977
   overview: space space space
   inventory: 3
+
+movie4:
+  title: A movie that has no inventory
+  release_date: 1980
+  overview: This movie is a movie with no inventory
+  inventory: 0
+  available_inventory: 0

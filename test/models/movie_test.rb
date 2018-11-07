@@ -39,4 +39,47 @@ describe Movie do
     end
   end
 
+  describe "methods" do
+    describe "Movie#can_checkout" do
+
+      it "returns true if there is available inventory" do
+        movie = movies(:movie1)
+        expect(movie.can_checkout?).must_equal true
+      end
+
+      it "returns false if there is available inventory" do
+        movie = movies(:movie4)
+        expect(movie.can_checkout?).must_equal false
+      end
+
+    end
+
+    describe "Movie#increment_inventory" do
+
+      it "will increment a movies available_inventory by 1" do
+        movie = movies(:movie1)
+        before = movie.available_inventory
+        movie.increment_inventory
+        after = movie.available_inventory
+
+        expect(after).must_be :>, before
+      end
+
+    end
+
+    describe "Movie#decrement_inventory" do
+
+      it "will decrement a movies available_inventory by 1" do
+        movie = movies(:movie1)
+        before = movie.available_inventory
+        movie.decrement_inventory
+        after = movie.available_inventory
+
+        expect(after).must_be :<, before
+      end
+
+    end
+
+  end
+
 end
