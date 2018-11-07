@@ -11,7 +11,7 @@ class RentalsController < ApplicationController
         render json: { id: rental.id }, status: :ok
       else
         render json: {
-          message: movie.errors.messages
+          message: rental.errors.messages
         }, status: :bad_request
       end
   end
