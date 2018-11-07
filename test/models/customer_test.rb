@@ -33,4 +33,34 @@ let(:customer){
     end
 
   end
+
+  describe "methods" do
+    describe "Customer#increment_checked_out_count" do
+
+      it "will increment a customers checked out count by 1" do
+        customer = customers(:customer1)
+        before = customer.movies_checked_out_count
+        customer.increment_checked_out_count
+        after = customer.movies_checked_out_count
+
+        expect(after).must_be :>, before
+      end
+
+    end
+
+    describe "Customer#decrement_checked_out_count" do
+
+      it "will decrement a customers checked out count by 1" do
+        customer = customers(:customer1)
+        before = customer.movies_checked_out_count
+        customer.decrement_checked_out_count
+        after = customer.movies_checked_out_count
+
+        expect(after).must_be :<, before
+      end
+
+    end
+
+  end
+
 end

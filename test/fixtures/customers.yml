@@ -8,6 +8,7 @@ customer1:
   address: 2421 E Fred St
   city: Seattle
   state: WA
+  movies_checked_out_count: 1
 
 
 customer2:
