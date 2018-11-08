@@ -33,11 +33,11 @@ class RentalsController < ApplicationController
     #add where the parameters are movie_id and customer_id and then order by due date
     #order and then return the .first value
     if rental
-      rental.returned = true
+      rental.returned = DateTime.now
 
       if rental.save
-        rental.movie.increment_inventory
         binding.pry
+        rental.movie.increment_inventory
         rental.customer.decrement_checked_out_count
         render json: { id: rental.id, returned: rental.returned }, status: :ok
       else

@@ -41,4 +41,11 @@ describe Rental do
       end
     end
 
+    describe "methods" do
+      it "Rental#get_rental" do
+
+      end
+
+    end
+
 end
