@@ -43,24 +43,23 @@ describe RentalsController do
   describe "update" do
     let(:rental_params) {
       {
-      movie_id: movies(:movie1).id,
-      customer_id: customers(:customer1).id
+      movie_id: movies(:movie5).id,
+      customer_id: customers(:customer2).id
       }
     }
 
     it "can update a rental when movie returned" do
         post rental_checkout_path, params: rental_params
 
-        rental = Rental.last
-        expect(rental.returned).must_equal nil
+        id = Rental.last.id
+        expect(Rental.last.returned).must_equal nil
 
           expect {
           post rental_checkin_path, params: rental_params
         }.wont_change "Rental.count"
 
-        binding.pry
-        rental.reload
-        expect(rental.returned).must_equal DateTime.now
+        rental = Rental.find_by(id: id)
+        expect(rental.returned).must_be_instance_of ActiveSupport::TimeWithZone
 
         body = JSON.parse(response.body)
 

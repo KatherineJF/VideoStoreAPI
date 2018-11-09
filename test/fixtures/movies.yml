@@ -25,3 +25,10 @@ movie4:
   overview: This movie is a movie with no inventory
   inventory: 0
   available_inventory: 0
+
+movie5:
+  title: Jaws
+  release_date: 1982
+  overview: sharks! ah!
+  inventory: 1
+  available_inventory: 1

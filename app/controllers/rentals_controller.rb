@@ -36,7 +36,6 @@ class RentalsController < ApplicationController
       rental.returned = DateTime.now
 
       if rental.save
-        binding.pry
         rental.movie.increment_inventory
         rental.customer.decrement_checked_out_count
         render json: { id: rental.id, returned: rental.returned }, status: :ok
