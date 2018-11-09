@@ -42,10 +42,18 @@ describe Rental do
     end
 
     describe "methods" do
-      it "Rental#get_rental" do
-
+      it "It can return a rental when given movie_id and customer_id" do
+        rental = rentals(:two)
+        customer = customers(:customer1).id
+        movie = movies(:movie2).id
+        rental_return = Rental.get_rental(customer, movie)
+        expect(rental_return).must_equal rental
       end
 
+      it "It won't return a rental when given invalid movie_id or customer_id" do
+
+
+      end
     end
 
 end
