@@ -46,13 +46,16 @@ describe Rental do
         rental = rentals(:two)
         customer = customers(:customer1).id
         movie = movies(:movie2).id
-        rental_return = Rental.get_rental(customer, movie)
+        rental_return = Rental.get_rental(movie, customer)
         expect(rental_return).must_equal rental
       end
 
       it "It won't return a rental when given invalid movie_id or customer_id" do
-
-
+        rental = rentals(:two)
+        customer = customers(:customer1).id
+        movie = movies(:movie2).id
+        rental_return = Rental.get_rental(8327589235782357, 3878246908)
+        expect(rental_return).must_equal nil
       end
     end
 
